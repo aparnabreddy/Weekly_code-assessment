@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/style1.css">
+    <title>Books</title>
+    
+</head>
+<body style="background-image: linear-gradient(blue,lightblue,white);">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Books Page</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="../home">HOME</a>
+            <a class="nav-item nav-link active" href="../add/">Add Book</a>
+            <a class="nav-item nav-link" href="../viewall/">ViewallBooks</a>
+            <a class="nav-item nav-link" href="../update/">Update</a>
+            <a class="nav-item nav-link" href="../delete/">Delete</a>
+            <a class="nav-item nav-link" href="../search/">Search</a>
+          </div>
+        </div>
+      </nav>
+      <br><br>
+      <center> <marquee behavior="scroll" direction="left" scrollamount="20" ><h1> LIBRARY MANAGEMENT SYSTEM </h1></marquee> </center> <br><br><br>
+
+
+     {% block content %}
+
+
+     {% endblock %}
+
+
+
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+

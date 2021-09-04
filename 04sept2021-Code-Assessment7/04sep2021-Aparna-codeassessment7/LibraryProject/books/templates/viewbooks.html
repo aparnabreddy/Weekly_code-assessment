@@ -1,0 +1,44 @@
+{% extends 'header.html'  %}
+{%  block content  %}
+
+<div class="container">
+  <div class="row">
+    <div class="col col-12 col-sm-2 col-md-2 col-lg-2 col-xl-2"></div>
+    <div class="col col-12 col-sm-8 col-md-8 col-lg-8 col-xl-8">
+      <table class="table table-stripes">
+        <thead class="table-dark">
+          <tr>
+            <th> Book Name </th>
+            <th> Author </th>
+            <th> Description </th>
+            <th> Price </th>
+            <th> Category </th>
+        </tr>
+        </thead>
+
+        <tbody>
+          {% for i in data  %}
+          <tr>
+            <td> {{ i.book_name }} </td>
+            <td> {{ i.author }} </td>
+            <td> {{ i.description }} </td>
+            <td> {{ i.price }} </td>
+            <td> {{ i.category }} </td>
+          
+        </tr>
+        {% endfor %}
+
+
+        </tbody>
+      </table>
+
+
+    </div>
+    <div class="col col-12 col-sm-2 col-md-2 col-lg-2 col-xl-2"></div>
+  </div>
+</div>
+    
+
+{%  endblock  %}
+
+    
