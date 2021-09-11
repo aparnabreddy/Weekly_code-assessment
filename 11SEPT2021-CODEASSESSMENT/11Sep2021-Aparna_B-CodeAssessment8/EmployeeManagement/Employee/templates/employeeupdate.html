@@ -1,0 +1,75 @@
+{% extends 'header.html' %}
+{% block myContent %}
+<div class="container">
+    <div class="row">
+        <div class="col col-12 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2"></div>
+        <div class="col col-12 col-sm-8 col-md-8 col-lg-8 col-xl-8 col-xxl-8">
+           <form action="http://127.0.0.1:8000/employee/editprofile/" method="post"><br><br>
+            <table class="table table-borderless">
+                <tr>
+                    <td> <b>EMPLOYEE CODE</b></td>
+                    <td><input name="empcode" placeholder="enter the employee code to update" type="number" class="form-control"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><center><button type="submit" class="btn btn-dark"><h6>SEARCH</h6></button></center></td>
+                </tr>
+            </table>
+           </form>
+           {% if data %}
+           <form action="http://127.0.0.1:8000/employee/editprofile/" method="post">
+            <table class="table table-borderless">
+                  {% for i in data %}
+                  <tr>
+                       <td></td>
+                       <td><input name="newid" value="{{i.id}}" type="hidden" class="form-control"></td>
+                   </tr>
+                    <tr>
+                        <td>EMPLOYEE CODE</td>
+                        <td><input name="newemployeecode" value="{{i.empcode}}" type="number" class="form-control"></td>
+                    </tr>
+                    <tr>
+                     <td>NAME</td>
+                     <td><input name="newname" value="{{i.name}}" type="text" class="form-control"></td>
+                   </tr>
+                   <tr>
+                    <tr>
+                        <td>ADDRESS</td>
+                        <td><input name="newaddress" value="{{i.address}}" type="text" class="form-control"></td>
+                    </tr>
+                     <tr>
+                         <td>MOBILE NO</td>
+                         <td><input name="newmobilenum" value="{{i.mobilenum}}" type="number" class="form-control"></td>
+                     </tr>
+                     <tr>
+                      <td>PINCODE</td>
+                      <td><input name="newpincode" value="{{i.pincode}}" type="number" class="form-control"></td>
+                    </tr>
+                    <tr>
+                        <td>SALARY</td>
+                        <td><input name="newsalary" value="{{i.salary}}" type="text" class="form-control"></td>
+                      </tr>
+                      <tr>
+                        <td>USERNAME</td>
+                        <td><input name="newusername" value="{{i.username}}" type="text" class="form-control"></td>
+                      </tr>
+                      <tr>
+                        <td>PASSWORD</td>
+                        <td><input name="newepassword" value="{{i.password}}" type="text" class="form-control"></td>
+                      </tr>
+                  
+                       <tr>
+                       <td></td>
+                       <td> <center> <button type="submit" class="btn btn-dark">UPDATE</button></center></td>
+                 </tr>
+                  {% endfor %}
+                </table>
+            </form>
+
+           {% endif %}
+        </div>
+        <div class="col col-12 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2"></div>
+    </div>
+</div>
+     
+{% endblock %}
