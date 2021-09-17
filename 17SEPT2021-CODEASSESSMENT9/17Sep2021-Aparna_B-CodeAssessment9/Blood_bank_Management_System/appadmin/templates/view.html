@@ -1,0 +1,42 @@
+{% extends 'adminheader.html' %}
+{% block myContent %}
+      
+<div class="container">
+    <div class="row">
+        <div class="col col-12 col-sm-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1"></div>
+        <div class="col col-12 col-sm-10 col-md-10 col-lg-10 col-xl-10 col-xxl-10">
+            <center><marquee behavior="scroll" direction="left"><h4 style="color: black;"> <b>VIEW ALL DONORS</b></h4></marquee></center>
+            <table class="table table-striped">
+                <thead class="table-secondary">
+                    <tr>
+                        
+                        <th>NAME</th>
+                        <th>ADDRESS</th>
+                        <th>BLOOD GROUP</th>
+                        <th>MOBILE NO</th>
+                        <th>USERNAME</th>
+                        <th>PASSWORD</th>
+                        
+                    </tr>
+                    
+                </thead>
+                <tbody>
+                    {% for i in data %}
+                    <tr>
+                        
+                        <td>{{ i.name }}</td>
+                        <td>{{ i.bgroup }}</td>
+                        <td>{{ i.address }}</td>
+                        <td>{{ i.mobilenumber }}</td>
+                        <td>{{ i.username }}</td>
+                        <td>{{ i.password }}</td>
+                       
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="col col-12 col-sm-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1"></div>
+    </div>
+</div>     
+{% endblock %}

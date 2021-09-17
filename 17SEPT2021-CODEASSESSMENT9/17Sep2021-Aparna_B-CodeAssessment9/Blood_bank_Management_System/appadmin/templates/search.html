@@ -1,0 +1,58 @@
+{% extends 'adminheader.html' %}
+{% block myContent %}
+<div class="container">
+    <div class="row">
+        <div class="col col-12 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2"></div>
+        <div class="col col-12 col-sm-8 col-md-8 col-lg-8 col-xl-8 col-xxl-8">
+           <form action="http://127.0.0.1:8000/appadmin/search/" method="post">
+            <center><marquee behavior="scroll" direction="left"><h4 style="color: black;"> <b>SEARCH DONOR</b></h4></marquee></center>
+            <table class="table table-borderless">
+                <tr>
+                    <td><h6>NAME</h6></td>
+                    <td><input name="name" placeholder="ENTER NAME TO SEARCH" type="text" class="form-control"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><center><button type="submit" class="btn btn-danger"><h6>SEARCH</h6></button></center></td>
+                </tr>
+            </table>
+           </form>
+           {% if data %}
+           <table class="table table-borderless">
+               {% for i in data %}
+               <tr>
+                   <td>NAME</td>
+                   <td>{{i.name}}</td>
+               </tr>
+               <tr>
+                <td>ADDRESS</td>
+                <td>{{i.address}}</td>
+            </tr>
+            <tr>
+                <td>BLOOD GROUP</td>
+                <td>{{i.bgroup}}</td>
+            </tr>
+            <tr>
+             <td>MOBILE NO</td>
+             <td>{{i.mobilenumber}}</td>
+         </tr>
+  
+        <tr>
+            <td>USERNAME</td>
+            <td>{{i.username}}</td>
+        </tr>
+        <tr>
+            <td>PASSWORD</td>
+            <td>{{i.password}}</td>
+        </tr>
+      
+               {% endfor %}
+           </table>
+
+           {% endif %}
+        </div>
+        <div class="col col-12 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2"></div>
+    </div>
+</div>
+     
+{% endblock %}
